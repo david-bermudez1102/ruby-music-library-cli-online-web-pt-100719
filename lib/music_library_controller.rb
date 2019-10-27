@@ -18,6 +18,7 @@ class MusicLibraryController
 
     input = gets.chomp
     if input!="exit"
+<<<<<<< HEAD
       case input
       when "list songs"
         list_songs
@@ -32,11 +33,14 @@ class MusicLibraryController
       when "play song"
         play_song
       end
+=======
+>>>>>>> 6f862d81d2f394d148446755f9f5a541dbfabc26
       self.call
     end
   end
 
   def list_songs
+<<<<<<< HEAD
     songs = Song.all.sort{|a,b| a.name <=> b.name}
     songs.each.with_index(1){|song,index|
       puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
@@ -92,4 +96,10 @@ class MusicLibraryController
       puts "Playing #{songs[plays-1].name} by #{songs[plays-1].artist.name}" if(songs[plays-1])
     end
   end
+=======
+    Song.sort.all.each.with_index(1){|song,index|
+      puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    }
+  end
+>>>>>>> 6f862d81d2f394d148446755f9f5a541dbfabc26
 end
